@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+
+    <style>
+        body{
+            font-family: Arial;
+        }
+
+        nav button{
+            margin: 15px; /* big gap between buttons */
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .page{
+            display: none;
+            margin-top: 20px;
+        }
+
+        #LOGIN{
+            display: block; /* only login shows first */
+        }
+    </style>
+
+    <script>
+        function showPage(pageId){
+
+            let pages = document.querySelectorAll(".page");
+
+            pages.forEach(function(page){
+                page.style.display = "none";
+            });
+
+            document.getElementById(pageId).style.display = "block";
+        }
+    </script>
+
+</head>
+<body>
+
+    <div style="background-color: rgba(0, 0, 128, 0.527); color:white; text-align:center; padding:20px;">
+
+        <h1>STUDENT FORM</h1>
+
+        <nav>
+            <button onclick="showPage('LOGIN')">LOGIN</button>
+
+            <button onclick="showPage('REGISTRATION')">
+                REGISTRATION
+            </button>
+
+            <button onclick="showPage('ENTERTAINMENT')">
+                ENTERTAINMENT
+            </button>
+
+            <button onclick="showPage('COURSES')">
+                COURSES
+            </button>
+
+            <button onclick="showPage('BOOK')">
+                BOOK
+            </button>
+        </nav>
+
+    </div>
+
+    <!-- LOGIN -->
+    <section id="LOGIN" class="page">
+
+        <h2 align="center">LOGIN</h2>
+
+        <form>
+            <label>Email:</label>
+            <input type="email" placeholder="type in here" required>
+            <br><br>
+
+            <label>Password:</label>
+            <input type="password" placeholder="type in here" required>
+            <br><br>
+
+            <input type="submit" value="LOGIN">
+        </form>
+
+    </section>
+
+    <!-- REGISTRATION -->
+    <section id="REGISTRATION" class="page">
+
+        <h2 align="center">REGISTRATION</h2>
+
+        <form>
+            <label>Names:</label>
+            <input type="text" required>
+            <br><br>
+
+            <label>Email:</label>
+            <input type="email" required>
+            <br><br>
+
+            <label>Password:</label>
+            <input type="password" required>
+            <br><br>
+
+            <input type="submit" value="REGISTER">
+        </form>
+
+    </section>
+
+    <!-- ENTERTAINMENT -->
+    <section id="ENTERTAINMENT" class="page">
+
+        <h2 align="center">ENTERTAINMENT</h2>
+
+        <form> 
+            <label>Favorite Movie:</label>
+            <input type="text">
+            <br><br>
+
+            <label>Favorite Music:</label>
+            <input type="text">
+            <br><br>
+
+            <input type="submit" value="SUBMIT">
+        </form>
+
+    </section>
+
+    <!-- COURSES -->
+    <section id="COURSES" class="page">
+
+        <h2 align="center">COURSES</h2>
+        
+        <form action="form.html" method="post">
+            <label for="course">select course:</label>
+            <select id="course" name="course">
+                <option value="math">Math</option>
+                <option value="science">Science</option>
+                <option value="history">History</option>
+            </select>
+            <br><br>
+            <input type="submit" value="SUBMIT">
+        </form>
+
+    </section>
+
+    <!-- BOOK -->
+    <section id="BOOK" class="page">
+
+        <h2 align="center">BOOK</h2>
+
+        <form action="form.html" method="post">
+            <label for="book">select book:</label>
+            <select id="book" name="book">
+                <option value="python">Python Programming</option>
+                <option value="javascript">JavaScript Guide</option>
+                <option value="html">HTML & CSS</option>
+            </select>
+            <br><br>
+            <input type="submit" value="SUBMIT">
+        </form>
+
+    </section>
+
+</body>
+</html>
